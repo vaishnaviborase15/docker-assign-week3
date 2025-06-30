@@ -1,8 +1,9 @@
 # Task-1 : Introduction to containerization and Docker fundamentals, Basic Commands
 
-Microsoft Windows [Version 10.0.22000.2538]
+Microsoft Windows \[Version 10.0.22000.2538]
 (c) Microsoft Corporation. All rights reserved.
 
+```
 C:\Users\admin>docker version
 Client:
  Version:           27.1.1
@@ -43,7 +44,6 @@ docker.io/library/ubuntu:latest
 What's next:
     View a summary of image vulnerabilities and recommendations → docker scout quickview ubuntu
 
-
 C:\Users\admin>docker pull hello-world
 Using default tag: latest
 latest: Pulling from library/hello-world
@@ -54,7 +54,6 @@ docker.io/library/hello-world:latest
 
 What's next:
     View a summary of image vulnerabilities and recommendations → docker scout quickview hello-world
-
 
 C:\Users\admin>docker run hello-world
 
@@ -79,7 +78,6 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
-
 C:\Users\admin>docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
@@ -98,11 +96,9 @@ ubuntu                                    latest    bf16bdcff9c9   4 weeks ago  
 hello-world                               latest    74cc54e27dc4   5 months ago   10.1kB
 
 
-
 C:\Users\admin>docker run -it ubuntu /bin/bash
-root@d72456140a53:/# exit
-exit
-
+root@d72456140a53:/# exit                         // now we can run linux commands here
+exit                                              //exit from the ubuntu container
 
 
 C:\Users\admin>docker rm e596219126f0e17aefea4d04369aa8dbed37c8dd24455a1ff760a5892ce8543d
