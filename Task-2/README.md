@@ -1,6 +1,6 @@
-# Task-2 : Docker installation and basic container operations, Build an image from Dockerfile
+# Task: Docker installation and basic container operations, Build an image from Dockerfile
 
-
+Container Operations
 ```
 C:\Users\admin>docker run -it ubuntu /bin/bash
 root@bf9c0b9c4762:/# exit
@@ -20,6 +20,9 @@ C:\Users\admin>docker rm bf9c0b9c4762f8be467ff12742311aca434702578372d2af67e2f62
 bf9c0b9c4762f8be467ff12742311aca434702578372d2af67e2f625f9642fc7
 
 
+```
+Creating the image
+```
 C:\Users\admin>cd desktop
 
 C:\Users\admin\Desktop>cd doctestapp
