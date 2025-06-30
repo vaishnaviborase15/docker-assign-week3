@@ -33,6 +33,7 @@ Server: Docker Desktop 4.33.1 (161083)
   Version:          0.19.0
   GitCommit:        de40ad0
 
+
 C:\Users\admin>docker pull ubuntu
 Using default tag: latest
 latest: Pulling from library/ubuntu
@@ -43,6 +44,7 @@ docker.io/library/ubuntu:latest
 
 What's next:
     View a summary of image vulnerabilities and recommendations → docker scout quickview ubuntu
+
 
 C:\Users\admin>docker pull hello-world
 Using default tag: latest
@@ -78,6 +80,7 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
+
 C:\Users\admin>docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
@@ -86,6 +89,7 @@ CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                 
 e596219126f0   hello-world   "/hello"   32 seconds ago   Exited (0) 31 seconds ago             inspiring_tesla
 a9168186806f   alpine        "sh"       3 days ago       Exited (255) 44 hours ago             container2
 8a1269d38748   alpine        "sh"       3 days ago       Exited (255) 44 hours ago             container1
+
 
 C:\Users\admin>docker images
 REPOSITORY                                TAG       IMAGE ID       CREATED        SIZE
