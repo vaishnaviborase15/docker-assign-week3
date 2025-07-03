@@ -4,7 +4,7 @@ This README documents a basic Docker usage session on a Windows 10 machine. The 
 
 ---
 
-## ✅ Task Summary
+##  Task Summary
 
 ### 🖥️ System Info
 - **OS**: Microsoft Windows 10 (Build 22000.2538)
@@ -14,7 +14,7 @@ This README documents a basic Docker usage session on a Windows 10 machine. The 
 
 ---
 
-## 🔧 Steps Performed
+## Steps Performed
 
 ### 1. **Verify Docker Installation**
 ```bash
@@ -75,7 +75,7 @@ docker container prune
 
 ---
 
-## 📁 Files and Images Used
+## Files and Images Used
 
 | Name              | Type     | Notes                             |
 |-------------------|----------|------------------------------------|
@@ -87,13 +87,13 @@ docker container prune
 
 ---
 
-## ✅ Conclusion
+##  Conclusion
 
 The Docker environment was successfully set up and tested. Images were pulled and containers were managed efficiently using standard Docker commands. Unused containers and images were cleaned up to maintain system hygiene.
 
 ---
 
-## 📚 References
+##  References
 
 - [Docker Docs - Get Started](https://docs.docker.com/get-started/)
 - [Docker Hub](https://hub.docker.com/)
