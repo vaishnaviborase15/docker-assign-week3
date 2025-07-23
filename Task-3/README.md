@@ -38,50 +38,7 @@ Run the following command in the root directory (`multi-stage-app`):
 docker build -t <dockerhub-username>/multi-stage-demo:latest .
 Example:
 
-  bash
-  Copy
-  Edit
+bash
+Copy
+Edit
 docker build -t vaishnaviborase/multi-stage-demo:latest .
-
-2. Run the Docker container locally
-  bash
-  Copy
-  Edit
-docker run --rm vaishnaviborase/multi-stage-demo:latest
-Expected output:
-
-  css
-  Copy
-  Edit
-Hello from a multi-stage Docker build!
-
-3. (Optional) Push the image to DockerHub
-Login to DockerHub:
-
-bash
-Copy
-Edit
-docker login
-Push the image:
-
-bash
-Copy
-Edit
-docker push vaishnaviborase/multi-stage-demo:latest
-Dockerfile Explanation
-This Dockerfile uses multi-stage builds to optimize image size:
-
-Builder stage (python:3.11-slim): Installs all Python dependencies.
-
-Final stage (python:3.11-slim): Copies only the Python runtime libraries and the application code from the builder stage, resulting in a smaller final image.
-
-Notes
-The current requirements.txt file is empty, but you can add your Python dependencies as needed.
-
-Make sure to replace <dockerhub-username> with your actual DockerHub username in all commands.
-
-Author
-Vaishnavi Borase
-
-License
-This project is licensed under the MIT License.
