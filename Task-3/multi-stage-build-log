@@ -1,0 +1,89 @@
+Microsoft Windows [Version 10.0.19045.6093]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Vaishnavi Borase>D:
+
+D:\>cd \W4-T2
+
+D:\W4-T2>mkdir multi-stage-app
+
+D:\W4-T2>cd multi-stage-app
+
+D:\W4-T2\multi-stage-app>echo print("Hello from a multi-stage Docker build!") > app.py
+
+D:\W4-T2\multi-stage-app>echo. > requirements.txt
+
+D:\W4-T2\multi-stage-app>rename Dockerfile.txt Dockerfile
+The system cannot find the file specified.
+
+D:\W4-T2\multi-stage-app>rename Dockerfile.txt Dockerfile
+
+D:\W4-T2\multi-stage-app>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\W4-T2\multi-stage-app>docker build -t <dockerhub-username>/multi-stage-demo:latest .
+The system cannot find the file specified.
+
+D:\W4-T2\multi-stage-app>docker build -t vaishnaviborase/multi-stage-demo:latest .
+[+] Building 40.2s (12/12) FINISHED                                                                docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                               0.1s
+ => => transferring dockerfile: 377B                                                                               0.0s
+ => WARN: FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 2)                                     0.1s
+ => [internal] load metadata for docker.io/library/python:3.11-slim                                                5.9s
+ => [auth] library/python:pull token for registry-1.docker.io                                                      0.0s
+ => [internal] load .dockerignore                                                                                  0.1s
+ => => transferring context: 2B                                                                                    0.0s
+ => [builder 1/4] FROM docker.io/library/python:3.11-slim@sha256:bbfdc132301b3257cbf23c65c26329572575385e7b9ad80e  8.9s
+ => => resolve docker.io/library/python:3.11-slim@sha256:bbfdc132301b3257cbf23c65c26329572575385e7b9ad80ec6d7df3c  0.1s
+ => => sha256:4085babbc5702254267393a22fc7f0d644efddd41dc328f81b1549c13a210b4e 249B / 249B                         0.8s
+ => => sha256:b7b61708209ad8f9b9a11c61dc9df90f74c1e39eddc169936146259febc2ec24 16.21MB / 16.21MB                   5.6s
+ => => sha256:abd846fa1cdb2ae1ef7731213cd4f0c40b05fdbeeaef9301a4dc9575b2088ece 3.51MB / 3.51MB                     4.1s
+ => => extracting sha256:abd846fa1cdb2ae1ef7731213cd4f0c40b05fdbeeaef9301a4dc9575b2088ece                          0.6s
+ => => extracting sha256:b7b61708209ad8f9b9a11c61dc9df90f74c1e39eddc169936146259febc2ec24                          3.0s
+ => => extracting sha256:4085babbc5702254267393a22fc7f0d644efddd41dc328f81b1549c13a210b4e                          0.1s
+ => [internal] load build context                                                                                  0.1s
+ => => transferring context: 131B                                                                                  0.0s
+ => [builder 2/4] WORKDIR /app                                                                                     0.3s
+ => [builder 3/4] COPY requirements.txt .                                                                          0.1s
+ => [builder 4/4] RUN pip install --upgrade pip && pip install -r requirements.txt                                17.9s
+ => [stage-1 3/4] COPY --from=builder /usr/local/lib/python3.11 /usr/local/lib/python3.11                          1.5s
+ => [stage-1 4/4] COPY app.py .                                                                                    0.1s
+ => exporting to image                                                                                             4.2s
+ => => exporting layers                                                                                            2.5s
+ => => exporting manifest sha256:0c35203043b4e659da42c9db3c87c550ce925d98edb4c4d305d8ae4f2f5c0844                  0.0s
+ => => exporting config sha256:0f31498021321b72dce3e4a25b5f8bb93edc05a83070f7326fcafde952b4b0fa                    0.0s
+ => => exporting attestation manifest sha256:1198054dd834afbf7b561534a14e7b1f26826727cd5b7cae6f76c465f89f9d51      0.1s
+ => => exporting manifest list sha256:2393b63c44ee84f8125e9e2e2f4f26bf23962acf613b8b362980ea558d42d7f7             0.0s
+ => => naming to docker.io/vaishnaviborase/multi-stage-demo:latest                                                 0.0s
+ => => unpacking to docker.io/vaishnaviborase/multi-stage-demo:latest                                              1.4s
+
+ 1 warning found (use docker --debug to expand):
+ - FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 2)
+
+D:\W4-T2\multi-stage-app>docker run --rm vaishnaviborse15/multi-stage-demo:latest
+Unable to find image 'vaishnaviborse15/multi-stage-demo:latest' locally
+docker: Error response from daemon: pull access denied for vaishnaviborse15/multi-stage-demo, repository does not exist or may require 'docker login'
+
+Run 'docker run --help' for more information
+
+D:\W4-T2\multi-stage-app>D:\W4-T2\multi-stage-app>docker run --rm vaishnaviborse15/multi-stage-demo:latest
+'D:\W4-T2\multi-stage-app' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\W4-T2\multi-stage-app>docker images
+REPOSITORY                                        TAG       IMAGE ID       CREATED              SIZE
+vaishnaviborase/multi-stage-demo                  latest    2393b63c44ee   About a minute ago   221MB
+mypythonapp                                       1.0       6ed5523811ea   28 minutes ago       192MB
+vaishacrregistryvaishnavi01.azurecr.io/vaishapp   v1        2bd055256677   5 weeks ago          189MB
+gcr.io/k8s-minikube/kicbase                       v0.0.47   8311be96a0a8   2 months ago         1.86GB
+gcr.io/k8s-minikube/kicbase                       <none>    6ed579c9292b   2 months ago         1.86GB
+hello-world                                       latest    ec153840d1e6   6 months ago         20.4kB
+
+D:\W4-T2\multi-stage-app>docker run --rm vaishnaviborase/multi-stage-demo:latest
+Hello from a multi-stage Docker build!
+
+D:\W4-T2\multi-stage-app>
+
+
+
