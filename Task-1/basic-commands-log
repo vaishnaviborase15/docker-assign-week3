@@ -1,63 +1,10 @@
-# Task-1 : Introduction to containerization and Docker fundamentals, Basic Commands
-
-Microsoft Windows \[Version 10.0.22000.2538]
+Microsoft Windows [Version 10.0.19045.6093]
 (c) Microsoft Corporation. All rights reserved.
 
-```
-C:\Users\admin>docker version
-Client:
- Version:           27.1.1
- API version:       1.46
- Go version:        go1.21.12
- Git commit:        6312585
- Built:             Tue Jul 23 19:57:57 2024
- OS/Arch:           windows/amd64
- Context:           desktop-linux
+C:\Users\Vaishnavi Borase>docker --version
+Docker version 28.3.2, build 578ccf6
 
-Server: Docker Desktop 4.33.1 (161083)
- Engine:
-  Version:          27.1.1
-  API version:      1.46 (minimum version 1.24)
-  Go version:       go1.21.12
-  Git commit:       cc13f95
-  Built:            Tue Jul 23 19:57:19 2024
-  OS/Arch:          linux/amd64
-  Experimental:     false
- containerd:
-  Version:          1.7.19
-  GitCommit:        2bf793ef6dc9a18e00cb12efb64355c2c9d5eb41
- runc:
-  Version:          1.7.19
-  GitCommit:        v1.1.13-0-g58aa920
- docker-init:
-  Version:          0.19.0
-  GitCommit:        de40ad0
-
-
-C:\Users\admin>docker pull ubuntu
-Using default tag: latest
-latest: Pulling from library/ubuntu
-d9d352c11bbd: Pull complete
-Digest: sha256:b59d21599a2b151e23eea5f6602f4af4d7d31c4e236d22bf0b62b86d2e386b8f
-Status: Downloaded newer image for ubuntu:latest
-docker.io/library/ubuntu:latest
-
-What's next:
-    View a summary of image vulnerabilities and recommendations → docker scout quickview ubuntu
-
-
-C:\Users\admin>docker pull hello-world
-Using default tag: latest
-latest: Pulling from library/hello-world
-e6590344b1a5: Pull complete
-Digest: sha256:940c619fbd418f9b2b1b63e25d8861f9cc1b46e3fc8b018ccfe8b78f19b8cc4f
-Status: Downloaded newer image for hello-world:latest
-docker.io/library/hello-world:latest
-
-What's next:
-    View a summary of image vulnerabilities and recommendations → docker scout quickview hello-world
-
-C:\Users\admin>docker run hello-world
+C:\Users\Vaishnavi Borase>docker run hello-world
 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
@@ -81,47 +28,122 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 
-C:\Users\admin>docker ps
+C:\Users\Vaishnavi Borase>docker run -it ubuntu bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+32f112e3802c: Pull complete
+Digest: sha256:a08e551cb33850e4740772b38217fc1796a66da2506d312abe51acda354ff061
+Status: Downloaded newer image for ubuntu:latest
+root@31276074b83c:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@31276074b83c:/# pwd
+/
+root@31276074b83c:/# apt update
+Get:1 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1870 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1131 kB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1285 kB]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [23.0 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1985 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [45.2 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1621 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1443 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [33.0 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [48.8 kB]
+Fetched 31.7 MB in 9s (3704 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@31276074b83c:/# apt install nano
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Suggested packages:
+  hunspell
+The following NEW packages will be installed:
+  nano
+0 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.
+Need to get 282 kB of archives.
+After this operation, 856 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 nano amd64 7.2-2ubuntu0.1 [282 kB]
+Fetched 282 kB in 3s (85.7 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package nano.
+(Reading database ... 4381 files and directories currently installed.)
+Preparing to unpack .../nano_7.2-2ubuntu0.1_amd64.deb ...
+Unpacking nano (7.2-2ubuntu0.1) ...
+Setting up nano (7.2-2ubuntu0.1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group editor) doesn't exist
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) doesn't exist
+root@31276074b83c:/# exit
+exit
+
+C:\Users\Vaishnavi Borase>docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
-C:\Users\admin>docker ps -a
-CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
-e596219126f0   hello-world   "/hello"   32 seconds ago   Exited (0) 31 seconds ago             inspiring_tesla
-a9168186806f   alpine        "sh"       3 days ago       Exited (255) 44 hours ago             container2
-8a1269d38748   alpine        "sh"       3 days ago       Exited (255) 44 hours ago             container1
+C:\Users\Vaishnavi Borase>docker ps -a
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED              STATUS                      PORTS                                                                                                                                  NAMES
+31276074b83c   ubuntu                                "bash"                   About a minute ago   Exited (0) 24 seconds ago                                                                                                                                          intelligent_brahmagupta
+0044b646b75d   hello-world                           "/hello"                 2 minutes ago        Exited (0) 2 minutes ago                                                                                                                                           jovial_diffie
+b9c764f91253   hello-world                           "/hello"                 7 minutes ago        Exited (0) 7 minutes ago                                                                                                                                           interesting_cray
+12b24010a64f   gcr.io/k8s-minikube/kicbase:v0.0.47   "/usr/local/bin/entr…"   9 days ago           Exited (255) 2 days ago     127.0.0.1:32768->22/tcp, 127.0.0.1:32769->2376/tcp, 127.0.0.1:32770->5000/tcp, 127.0.0.1:32771->8443/tcp, 127.0.0.1:32772->32443/tcp   minikube
 
+C:\Users\Vaishnavi Borase>docker rm 31276074b83c 0044b646b75d b9c764f91253
+31276074b83c
+0044b646b75d
+b9c764f91253
 
-C:\Users\admin>docker images
-REPOSITORY                                TAG       IMAGE ID       CREATED        SIZE
-mywebapp                                  v1        66f6331891a3   2 weeks ago    48.2MB
-w2containerregistry.azurecr.io/mywebapp   v1        66f6331891a3   2 weeks ago    48.2MB
-alpine                                    latest    cea2ff433c61   4 weeks ago    8.31MB
-ubuntu                                    latest    bf16bdcff9c9   4 weeks ago    78.1MB
-hello-world                               latest    74cc54e27dc4   5 months ago   10.1kB
-
-
-C:\Users\admin>docker run -it ubuntu /bin/bash
-root@d72456140a53:/# exit                         // now we can run linux commands here
-exit                                              //exit from the ubuntu container
-
-
-C:\Users\admin>docker rm e596219126f0e17aefea4d04369aa8dbed37c8dd24455a1ff760a5892ce8543d
-e596219126f0e17aefea4d04369aa8dbed37c8dd24455a1ff760a5892ce8543d
-
-C:\Users\admin>docker rmi 74cc54e27dc41bb10dc4b2226072d469509f2f22f1a3ce74f4a59661a1d44602
-Untagged: hello-world:latest
-Untagged: hello-world@sha256:940c619fbd418f9b2b1b63e25d8861f9cc1b46e3fc8b018ccfe8b78f19b8cc4f
-Deleted: sha256:74cc54e27dc41bb10dc4b2226072d469509f2f22f1a3ce74f4a59661a1d44602
-Deleted: sha256:63a41026379f4391a306242eb0b9f26dc3550d863b7fdbb97d899f6eb89efe72
-
-C:\Users\admin>docker container prune
+C:\Users\Vaishnavi Borase>docker container prune
 WARNING! This will remove all stopped containers.
-Are you sure you want to continue? [y/N] y
-Deleted Containers:
-d72456140a533cc2ad9d7ca16a353d1761083a9abb844fa8c82847157615348d
-a9168186806fcb82d4b8786095036aeef47218b42583feacd0d735c4b7a60d09
-8a1269d387489c83324c6c5aea83ae99615d20e5adaaa58771c30aa5e28920ca
+Are you sure you want to continue? [y/N] docker container prune
 
-Total reclaimed space: 26B
+C:\Users\Vaishnavi Borase>docker run -it --rm ubuntu bash
+root@4d2ce87fe17f:/# docker images
+bash: docker: command not found
+root@4d2ce87fe17f:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@4d2ce87fe17f:/# exit
+exit
 
-C:\Users\admin>
+C:\Users\Vaishnavi Borase>docker images
+REPOSITORY                                        TAG       IMAGE ID       CREATED        SIZE
+ubuntu                                            latest    a08e551cb338   8 days ago     117MB
+vaishacrregistryvaishnavi01.azurecr.io/vaishapp   v1        2bd055256677   5 weeks ago    189MB
+gcr.io/k8s-minikube/kicbase                       v0.0.47   8311be96a0a8   2 months ago   1.86GB
+gcr.io/k8s-minikube/kicbase                       <none>    6ed579c9292b   2 months ago   1.86GB
+hello-world                                       latest    ec153840d1e6   6 months ago   20.4kB
+
+C:\Users\Vaishnavi Borase>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\Vaishnavi Borase>vaishacrregistryvaishnavi01.azurecr.io/vaishapp:v1
+'vaishacrregistryvaishnavi01.azurecr.io' is not recognized as an internal or external command,
+operable program or batch file.
+
+[+] Building 0.3s (1/1) FINISHED                                                                    docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                0.1st
+ => => transferring dockerfile: 2B                                                                                  0.0s
+ERROR: failed to build: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+C:\Users\Vaishnavi Borase>docker build -t vaishacrregistryvaishnavi01.azurecr.io/vaishapp:v1 .
+C:\Users\Vaishnavi Borase>docker rmi a08e551cb338
+Untagged: ubuntu:latest
+Deleted: sha256:a08e551cb33850e4740772b38217fc1796a66da2506d312abe51acda354ff061
+
+C:\Users\Vaishnavi Borase>docker images
+REPOSITORY                                        TAG       IMAGE ID       CREATED        SIZE
+vaishacrregistryvaishnavi01.azurecr.io/vaishapp   v1        2bd055256677   5 weeks ago    189MB
+gcr.io/k8s-minikube/kicbase                       v0.0.47   8311be96a0a8   2 months ago   1.86GB
+gcr.io/k8s-minikube/kicbase                       <none>    6ed579c9292b   2 months ago   1.86GB
+hello-world                                       latest    ec153840d1e6   6 months ago   20.4kB
+
+C:\Users\Vaishnavi Borase>
