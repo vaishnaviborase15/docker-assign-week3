@@ -1,0 +1,119 @@
+Microsoft Windows [Version 10.0.19045.6093]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Vaishnavi Borase>D:
+
+D:\>cd \W4-T2
+
+D:\W4-T2>mkdir mydockerapp
+
+D:\W4-T2>cd mydockerapp
+
+D:\W4-T2\mydockerapp>docker build -t mypythonapp:1.0 .
+[+] Building 0.2s (1/1) FINISHED                                                                   docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                               0.1s
+ => => transferring dockerfile: 2B                                                                                 0.0s
+ERROR: failed to build: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+
+D:\W4-T2\mydockerapp>docker build -t mypythonapp:1.0 .
+[+] Building 0.2s (1/1) FINISHED                                                                   docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                               0.1s
+ => => transferring dockerfile: 2B                                                                                 0.0s
+ERROR: failed to build: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+
+D:\W4-T2\mydockerapp>dir
+ Volume in drive D is New Volume
+ Volume Serial Number is D05A-63B0
+
+ Directory of D:\W4-T2\mydockerapp
+
+07/23/2025  02:44 PM    <DIR>          .
+07/23/2025  02:44 PM    <DIR>          ..
+07/23/2025  02:42 PM                38 app.py
+07/23/2025  02:42 PM               262 Dockerfile.txt
+               2 File(s)            300 bytes
+               2 Dir(s)  207,541,272,576 bytes free
+
+D:\W4-T2\mydockerapp>dir
+ Volume in drive D is New Volume
+ Volume Serial Number is D05A-63B0
+
+ Directory of D:\W4-T2\mydockerapp
+
+07/23/2025  02:47 PM    <DIR>          .
+07/23/2025  02:47 PM    <DIR>          ..
+07/23/2025  02:42 PM                38 app.py
+07/23/2025  02:47 PM                76 Dockerfile.txt
+               2 File(s)            114 bytes
+               2 Dir(s)  207,541,272,576 bytes free
+
+D:\W4-T2\mydockerapp>rename Dockerfile.txt Dockerfile
+
+D:\W4-T2\mydockerapp>dir
+ Volume in drive D is New Volume
+ Volume Serial Number is D05A-63B0
+
+ Directory of D:\W4-T2\mydockerapp
+
+07/23/2025  02:48 PM    <DIR>          .
+07/23/2025  02:48 PM    <DIR>          ..
+07/23/2025  02:42 PM                38 app.py
+07/23/2025  02:47 PM                76 Dockerfile
+               2 File(s)            114 bytes
+               2 Dir(s)  207,541,272,576 bytes free
+
+D:\W4-T2\mydockerapp>docker build -t mypythonapp:1.0 .
+[+] Building 22.9s (9/9) FINISHED                                                                  docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 113B                                                                               0.0s
+ => [internal] load metadata for docker.io/library/python:3.10-slim                                                5.7s
+ => [auth] library/python:pull token for registry-1.docker.io                                                      0.0s
+ => [internal] load .dockerignore                                                                                  0.1s
+ => => transferring context: 2B                                                                                    0.0s
+ => [1/3] FROM docker.io/library/python:3.10-slim@sha256:d651b5260ef4266b8c83fd679f4f4087da352f35b9f0c57a57987c6  14.9s
+ => => resolve docker.io/library/python:3.10-slim@sha256:d651b5260ef4266b8c83fd679f4f4087da352f35b9f0c57a57987c67  0.2s
+ => => sha256:00aa2453f38062a311a828d4d0790d1911a81372ad928c8856387ceccc7a6c12 250B / 250B                         0.6s
+ => => sha256:3fa1124e7cf3ed5061a51b47c3e7a138e1b25dce3c94e9967a6b2a9acfe36402 15.65MB / 15.65MB                   5.1s
+ => => sha256:12b8240e46e9f448e7eba19870e233d03c7160ca9b1777ab3ec2eeddf4349fa8 3.51MB / 3.51MB                     2.6s
+ => => sha256:59e22667830bf04fb35e15ed9c70023e9d121719bb87f0db7f3159ee7c7e0b8d 28.23MB / 28.23MB                   7.1s
+ => => extracting sha256:59e22667830bf04fb35e15ed9c70023e9d121719bb87f0db7f3159ee7c7e0b8d                          4.4s
+ => => extracting sha256:12b8240e46e9f448e7eba19870e233d03c7160ca9b1777ab3ec2eeddf4349fa8                          0.4s
+ => => extracting sha256:3fa1124e7cf3ed5061a51b47c3e7a138e1b25dce3c94e9967a6b2a9acfe36402                          2.5s
+ => => extracting sha256:00aa2453f38062a311a828d4d0790d1911a81372ad928c8856387ceccc7a6c12                          0.1s
+ => [internal] load build context                                                                                  0.2s
+ => => transferring context: 186B                                                                                  0.0s
+ => [2/3] WORKDIR /app                                                                                             0.7s
+ => [3/3] COPY . /app                                                                                              0.1s
+ => exporting to image                                                                                             0.9s
+ => => exporting layers                                                                                            0.3s
+ => => exporting manifest sha256:de462a81fbba480f256a58abf266df2455ce8dbd3ff421fb33bdccf5632c55bf                  0.0s
+ => => exporting config sha256:91871c20038875492994726274ae56f5f7e09059e8da54ac53709650b94c3251                    0.0s
+ => => exporting attestation manifest sha256:d54e798e9bc1199632a79a94c97857434a19e74afcb72e6876650903ece8cb31      0.1s
+ => => exporting manifest list sha256:6ed5523811ea9d973ebae388d000bd7957ddd9099782961e6731feb4364e7fe4             0.0s
+ => => naming to docker.io/library/mypythonapp:1.0                                                                 0.0s
+ => => unpacking to docker.io/library/mypythonapp:1.0                                                              0.1s
+
+D:\W4-T2\mydockerapp>docker images
+REPOSITORY                                        TAG       IMAGE ID       CREATED          SIZE
+mypythonapp                                       1.0       6ed5523811ea   45 seconds ago   192MB
+vaishacrregistryvaishnavi01.azurecr.io/vaishapp   v1        2bd055256677   5 weeks ago      189MB
+gcr.io/k8s-minikube/kicbase                       v0.0.47   8311be96a0a8   2 months ago     1.86GB
+gcr.io/k8s-minikube/kicbase                       <none>    6ed579c9292b   2 months ago     1.86GB
+hello-world                                       latest    ec153840d1e6   6 months ago     20.4kB
+
+D:\W4-T2\mydockerapp>docker run mypythonapp:1.0
+Hello from my Docker image!
+
+D:\W4-T2\mydockerapp>docker run --rm mypythonapp:1.0
+Hello from my Docker image!
+
+D:\W4-T2\mydockerapp>docker run -it mypythonapp:1.0 /bin/bash
+root@59aae1c24bc2:/app# ls
+Dockerfile  app.py
+root@59aae1c24bc2:/app# python app.py
+Hello from my Docker image!
+root@59aae1c24bc2:/app# exit
+exit
+
+D:\W4-T2\mydockerapp>
+
