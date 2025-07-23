@@ -38,21 +38,23 @@ Run the following command in the root directory (`multi-stage-app`):
 docker build -t <dockerhub-username>/multi-stage-demo:latest .
 Example:
 
-bash
-Copy
-Edit
+  bash
+  Copy
+  Edit
 docker build -t vaishnaviborase/multi-stage-demo:latest .
+
 2. Run the Docker container locally
-bash
-Copy
-Edit
+  bash
+  Copy
+  Edit
 docker run --rm vaishnaviborase/multi-stage-demo:latest
 Expected output:
 
-css
-Copy
-Edit
+  css
+  Copy
+  Edit
 Hello from a multi-stage Docker build!
+
 3. (Optional) Push the image to DockerHub
 Login to DockerHub:
 
