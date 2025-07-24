@@ -36,13 +36,13 @@ COPY app.py .
 
 CMD ["python", "app.py"]
 
-🛠️ Build the Docker Image
+**🛠️ Build the Docker Image**
 bash
 Copy
 Edit
 docker build -t vaishnaviborase/multi-stage-demo:latest .
 
-🚀 Run the Docker Container
+**🚀 Run the Docker Container**
 bash
 Copy
 Edit
@@ -54,7 +54,7 @@ Copy
 Edit
 Hello from a multi-stage Docker build!
 
-📦 Docker Image Info
+**📦 Docker Image Info**
 After building, you can verify the image:
 
 bash
@@ -70,12 +70,12 @@ Edit
 REPOSITORY                          TAG       IMAGE ID       SIZE
 vaishnaviborase/multi-stage-demo   latest    2393b63c44ee   221MB
 
-🧾 Notes
+**🧾 Notes**
 Ensure you are in the correct directory (multi-stage-app) before running build commands.
 
 The warning FromAsCasing can be safely ignored for this demo. It's best practice to use consistent casing for Dockerfile keywords like FROM and AS.
 
-🧑‍💻 Author
+**🧑‍💻 Author**
 Vaishnavi Borase
 
 
