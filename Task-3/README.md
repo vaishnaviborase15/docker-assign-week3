@@ -70,7 +70,7 @@ Edit
 REPOSITORY                          TAG       IMAGE ID       SIZE
 vaishnaviborase/multi-stage-demo   latest    2393b63c44ee   221MB
 
-##🧾 Notes
+## 📁 Project Structure
 Ensure you are in the correct directory (multi-stage-app) before running build commands.
 
 The warning FromAsCasing can be safely ignored for this demo. It's best practice to use consistent casing for Dockerfile keywords like FROM and AS.
